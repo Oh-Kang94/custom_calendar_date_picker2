@@ -97,7 +97,9 @@ class _CalendarDatePicker2WithActionButtonsState
         ),
         SizedBox(height: widget.config.gapBetweenCalendarAndButtons ?? 10),
         Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          // Alignment 수정
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // Alignment 수정 끝 
           children: [
             _buildCancelButton(Theme.of(context).colorScheme, localizations),
             if ((widget.config.gapBetweenCalendarAndButtons ?? 0) > 0)
@@ -124,6 +126,8 @@ class _CalendarDatePicker2WithActionButtonsState
       child: Container(
         padding: widget.config.buttonPadding ??
             const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+        // 이부분 수정 함
+        width: 100,
         child: widget.config.cancelButton ??
             Text(
               localizations.cancelButtonLabel.toUpperCase(),
@@ -139,6 +143,7 @@ class _CalendarDatePicker2WithActionButtonsState
     );
   }
 
+  // 이부분 크기 수정
   Widget _buildOkButton(
       ColorScheme colorScheme, MaterialLocalizations localizations) {
     return InkWell(
@@ -155,6 +160,9 @@ class _CalendarDatePicker2WithActionButtonsState
       child: Container(
         padding: widget.config.buttonPadding ??
             const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+        // 이부분 수정 함
+        width: 100,
+        // End
         child: widget.config.okButton ??
             Text(
               localizations.okButtonLabel.toUpperCase(),
